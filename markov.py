@@ -57,8 +57,8 @@ def twitterize(phrase):
         words[ii] = words[ii].upper()
         phrase = ' '.join(words)
 
-
     return phrase
+
 
 def tokenize(fn=None, string=None, preserveSingleNewline=False, preserveMultipleNewline=False, doubleNewlineCreatesPeriod=True):
     """Given a filename, yield its contents as a series of parsed tokens, one at a time.
@@ -118,9 +118,10 @@ def tokenize(fn=None, string=None, preserveSingleNewline=False, preserveMultiple
     if preserveSingleNewline:
         yield config.NEWLINE 
 
+
 def untokenize(tokens):
     """Given an iterable of tokens, return a string with them mushed together properly.
-    Correctly capitalize sentences; remove spaces before commas, etc.
+    Correctly capitalize sentences, remove spaces before commas, etc.
     """
 
     # capitalize the first word of a sentence
@@ -161,18 +162,23 @@ def untokenize(tokens):
 #--- MARKOV
 
 def chooseRandomlyFromCountDict(d):
+    """Given a dict mapping words to their frequencies:
+        word: 23,
+        anotherword: 49,
+        someword: 103,
+    Return one of the keys with probability proportional to its count.
+    """
     total = sum(d.values())
     randVal = random.uniform(0,total)
     items = d.items()
 
-    # faster way
     countSoFar = 0
     for word,count in d.items():
         countSoFar += count
         if countSoFar > randVal:
             return word
-    print 'warning'
     return word
+
 
 class Markov(object):
     def __init__(self,n=3):
@@ -180,6 +186,8 @@ class Markov(object):
         self.db = {} # mapping (token1,token2,token3) -> {tokenA:countA, tokenB:countB}
 
     def learn(self,tokenizer):
+        """Given a tokenizer, read the tokens and learn their patterns.
+        """
         lastN = tuple([None] * self.n)
         for token in tokenizer:
             counts = self.db.get(lastN,{})
