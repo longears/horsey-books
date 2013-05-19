@@ -44,7 +44,7 @@ Ideas for input text
 * New York Times articles
 * Wikipedia articles
 * Books (check [Project Gutenberg](http://www.gutenberg.org/))
-* [Erowid](http://www.erowid.org/experiences/) drug trip reports
+* [Erowid](http://www.erowid.org/experiences/) drug trip reports -- use the included script `scrape-erowid.py`
 * Fan fiction
 * Political writing & manifestos
 * Sex education material
