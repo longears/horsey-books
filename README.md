@@ -1,7 +1,7 @@
 Horsey Books
 =====================
 
-This is a collection of tools for generating weird phrases and auto-posting them to Tumblr.
+A collection of tools for generating weird phrases and auto-posting them to Tumblr.
 
 Inspired by [@horse_ebooks](https://twitter.com/horse_ebooks).
 

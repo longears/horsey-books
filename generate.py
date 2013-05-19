@@ -74,7 +74,7 @@ if __name__ == '__main__':
     if '--interactive'  in ARGS:
         print 'usage:'
         print '    y / yes                      save to the queue'
-        print '    some long message            queue that message instead'
+        print '    some long message            queue your own message instead'
         print '    n / no / blank response      ignore and discard'
         print '    q / quit                     quit'
         print
