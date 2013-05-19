@@ -8,4 +8,5 @@ local/*
 *.swp
 .DS_Store
 
+tumblr_auth_tokens.py
 

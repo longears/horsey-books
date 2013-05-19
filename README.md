@@ -10,13 +10,22 @@ Dependencies
 
 Python (2.5, maybe?)
 
+Includes a copy of [https://github.com/michaelhelmick/python-tumblpy](https://github.com/michaelhelmick/python-tumblpy).
 
-How to use it
+
+How to generate text
 ---------------------
 
 1. Dump a bunch of `.txt` files in the `text/` directory.
 2. Run `generate.py` which will generate a bunch of phrases.  Approve or reject each one.  The good ones are saved to `queue.txt`
-3. (coming soon) Run `post-to-tumblr.py` to post the first item from the queue to Tumblr.
+
+
+How to create queued posts on Tumblr
+---------------------
+
+1. Rename `tumblr_auth_tokens.example.py` to `tumblr_auth_tokens.py`
+2. Get [auth tokens from Tumblr](http://www.tumblr.com/oauth/apps) and put them in `tumblr_auth_tokens.py`
+3. Run `queue-entire-file-to-tumblr.py yourfile.txt` which will take each line of text from the text file and put it on Tumblr as a queued text post.
 
 
 Tips
